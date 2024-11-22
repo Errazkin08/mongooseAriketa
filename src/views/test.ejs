@@ -28,6 +28,22 @@
             const data = await response.json();
             document.getElementById('newIkasle').innerText = JSON.stringify(data, null, 2);
         }
+        async function deleteIkasle() {
+        const id = document.getElementById("deleteId").value;
+
+        const response = await fetch(`/api/ikasleak/${id}`, {
+          method: "DELETE",
+        });
+
+        const data = await response.json();
+        document.getElementById("deletedIkasle").innerText = JSON.stringify(
+          data,
+          null,
+          2
+        );
+      }
+
+
     </script>
 </head>
 <body>
