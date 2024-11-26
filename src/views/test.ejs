@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Ikasleak API</title>
     <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            editIkasle();
+        })
         
         async function fetchIkasleak() {
             const response = await fetch('/api/ikasleak');
@@ -45,14 +48,9 @@
         );
       }
       async function editIkasle() {
-            
-    
             const combo= document.getElementById('ikasleakCB');
-
             const response = await fetch('/api/ikasleak');
             const data = await response.json();
-
-            
             combo.innerHTML=''
             const defaultOption = document.createElement('option');
             defaultOption.value = '';
